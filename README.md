@@ -1,58 +1,122 @@
-Introduction
-In today’s fast-paced financial markets, real-time analysis is essential for timely and informed decisions. This project develops a Real-Time Financial Analysis & Trading System to process simulated financial data in real-time, generate actionable trading signals, and provide intuitive data visualizations.
+# **📈 Real-Time Financial Analysis & Trading System**  
 
-It emphasizes distributed computing, microservices architecture, and stream processing, offering students and professionals a platform to simulate trading strategies and learn market dynamics.
+## **📌 Overview**  
 
-Objective
-The project aims to:
+This project develops a **Real-Time Financial Analysis & Trading System** to process simulated financial data in real-time, generate actionable **trading signals**, and provide **intuitive data visualizations**.  
 
-Build a scalable system for real-time financial data processing.
-Calculate and visualize trading indicators (e.g., Moving Average, RSI).
-Provide actionable insights through real-time notifications and an intuitive dashboard.
-System Architecture
-The architecture is guided by:
+It leverages **distributed computing, microservices architecture, and stream processing**, offering a **scalable and educational platform** for traders, researchers, and students to **simulate trading strategies** and **analyze market dynamics** in real time.  
 
-Microservices Design: Independent components for data ingestion, processing, and visualization.
-Stream Processing: Real-time data handling using frameworks like Kafka.
-Event-Driven Architecture: Enables responsiveness and scalability.
-WebSocket Integration: Delivers real-time updates to the user interface.
-Key Components
-Data Generator: Simulates financial data with stock symbols, prices, volumes, and metadata like order book and sentiment.
-Ingestion Service: Receives and validates data for processing.
-Stream Processor: Analyzes data to compute trading indicators (e.g., MA, EMA, RSI).
-Trading Signal Service: Generates buy/sell signals.
-Notification Service: Sends alerts via email/SMS.
-Visualization Service: Displays interactive charts and analytics on a user dashboard.
-Load Balancer: Ensures system reliability under heavy traffic.
-Setup Instructions
-Prerequisites
-Install Apache Kafka, Python 3, Node.js, and Java (with Maven or Gradle).
-Steps
-Clone the Repository:
-bash
-Copy code
-git clone https://github.com/ebi2kh/Real-Time-Financial-Analysis-Trading-System.git  
+---
+
+## **🎯 Objectives**  
+
+✔ **Build a scalable system** for real-time **financial data processing**.  
+✔ **Compute and visualize** key trading indicators (**Moving Average, RSI, EMA**).  
+✔ **Generate buy/sell signals** and notify users **in real time**.  
+✔ **Deliver an interactive dashboard** for live market monitoring.  
+
+---
+
+## **⚙️ System Architecture**  
+
+This system follows a **modular and event-driven** architecture with:  
+
+✔ **Microservices Design** → Independent services for **data ingestion, processing, and visualization**.  
+✔ **Stream Processing** → Real-time **data handling** via **Apache Kafka**.  
+✔ **Event-Driven Architecture** → Ensures **scalability & responsiveness**.  
+✔ **WebSocket Integration** → Provides **live updates** to the **dashboard**.  
+
+---
+
+## **🔑 Key Components**  
+
+| **Component** | **Functionality** |
+|--------------|------------------|
+| **📊 Data Generator** | Simulates real-time stock market data (**symbols, prices, volume, order book, sentiment**). |
+| **📥 Ingestion Service** | Receives & validates incoming stock data. |
+| **⚡ Stream Processor** | Computes technical indicators (**MA, EMA, RSI**). |
+| **📈 Trading Signal Service** | Analyzes indicators to **generate buy/sell signals**. |
+| **🔔 Notification Service** | Sends alerts via **email/SMS** for trade signals. |
+| **📊 Visualization Service** | Displays **real-time charts & analytics** on a dashboard. |
+| **⚖️ Load Balancer** | Distributes requests to maintain **system reliability**. |
+
+---
+
+## **📥 Installation & Setup**  
+
+### **🔹 Prerequisites**  
+
+✔ **Install** [Apache Kafka](https://kafka.apache.org/), Python **3.8+**, Node.js **16+**, Java (**Maven/Gradle**).  
+
+### **1️⃣ Clone the Repository**  
+```bash
+git clone https://github.com/ebi2kh/Real-Time-Financial-Analysis-Trading-System.git
 cd Real-Time-Financial-Analysis-Trading-System
-Install Dependencies:
-Python: pip install Flask kafka-python
-Node.js: npm install kafka-node
-Java: Add Kafka dependency to your Maven/Gradle file.
-Run Services:
-Start Kafka and Zookeeper.
-Run generate.py (data generator).
-Run services (ingestion.py, trading_signal.js) using respective commands.
-Access the dashboard at http://localhost:8080.
-Mandatory Indicators
-Moving Average (MA): Smooths short-term price fluctuations.
-Exponential Moving Average (EMA): More responsive to recent price changes.
-Relative Strength Index (RSI): Identifies overbought/oversold conditions.
-Future Enhancements
-ML Integration: Predict trends with machine learning.
-NLP for Sentiment Analysis: Gauge market sentiment from news and social media.
-Advanced Visualization: Interactive dashboards and 3D charts.
-Risk Management Tools: Automate stop-loss and position sizing.
-References
-Apache Kafka Documentation
-Chart.js Documentation
-François Chollet, Deep Learning with Python.
-Machine Learning Mastery
+```
+
+### **2️⃣ Install Dependencies**  
+
+#### **Python Dependencies**  
+```bash
+pip install Flask kafka-python
+```
+
+#### **Node.js Dependencies**  
+```bash
+npm install kafka-node
+```
+
+#### **Java (Maven/Gradle)**  
+Add Kafka dependency to your **Maven** or **Gradle** configuration.  
+
+### **3️⃣ Run Services**  
+
+1️⃣ **Start Kafka & Zookeeper**  
+```bash
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+```
+
+2️⃣ **Run Data Generator**  
+```bash
+python generate.py
+```
+
+3️⃣ **Run Ingestion & Trading Signal Services**  
+```bash
+python ingestion.py
+node trading_signal.js
+```
+
+4️⃣ **Access Dashboard**  
+Open [http://localhost:8080](http://localhost:8080) in your browser.  
+
+---
+
+## **📊 Mandatory Trading Indicators**  
+
+| **Indicator** | **Description** |
+|--------------|----------------|
+| **📉 Moving Average (MA)** | Smooths short-term price fluctuations. |
+| **⚡ Exponential Moving Average (EMA)** | Reacts more quickly to price changes than MA. |
+| **📊 Relative Strength Index (RSI)** | Identifies **overbought**/**oversold** conditions. |
+
+---
+
+## **🚀 Future Enhancements**  
+
+✅ **Machine Learning Integration** → Predict stock trends with AI models.  
+✅ **NLP Sentiment Analysis** → Extract insights from **news & social media**.  
+✅ **Advanced Data Visualization** → Interactive **3D charts & analytics**.  
+✅ **Automated Risk Management** → Implement **stop-loss & position sizing**.  
+
+---
+
+## **📖 References**  
+
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/)  
+- [Chart.js Documentation](https://www.chartjs.org/docs/latest/)  
+- **François Chollet** - *Deep Learning with Python*  
+- [Machine Learning Mastery](https://machinelearningmastery.com/)  
+
+---
